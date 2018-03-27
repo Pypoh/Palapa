@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pypoh.project.com.palapa.RegisterPage"
+    android:background="@drawable/signup_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:src="@drawable/logo_white"
+            android:layout_marginTop="25dp"
+            android:id="@+id/logo_daftar"
+
+            />
+
+        <EditText
+            android:id="@+id/register_username"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_daftar"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:gravity="center"
+            android:hint="Nama Pengguna"
+            android:textColorHint="#808080"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="216dp" />
+
+        <EditText
+            android:id="@+id/daftar_email"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:gravity="center"
+            android:hint="Email"
+            android:textColorHint="#808080"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="216dp" />
+        <EditText
+            android:id="@+id/daftar_password"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:gravity="center"
+            android:hint="Kata Sandi"
+            android:textColorHint="#808080"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="216dp" />
+
+        <ImageButton
+            android:id="@+id/daftar_btn"
+            android:layout_width="120dp"
+            android:layout_height="58dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="20dp"
+
+            android:scaleType="fitCenter"
+            android:src="@drawable/daftar" />
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
