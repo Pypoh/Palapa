@@ -15,29 +15,48 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="175dp"
             android:src="@drawable/logo_white"
-            android:layout_marginTop="25dp"
-            android:id="@+id/logo_daftar"
+            android:layout_marginTop="0dp"
+            android:id="@+id/logo_white"
 
             />
 
+
         <EditText
-            android:id="@+id/register_username"
+            android:id="@+id/daftar_nama"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo_daftar"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/logo_white"
+            android:layout_marginTop="5dp"
             android:background="#ffffff"
             android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
             android:gravity="center"
-            android:hint="Nama Pengguna"
+            android:hint="Nama Lengkap"
             android:textColorHint="#808080"
             android:textColor="#000000"
             android:textSize="16dp"
             tools:layout_editor_absoluteX="155dp"
             tools:layout_editor_absoluteY="216dp" />
+
+        <EditText
+            android:id="@+id/daftar_username"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_white"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:gravity="center"
+            android:hint="Username"
+            android:textColorHint="#808080"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="216dp" />
+
+
 
         <EditText
             android:id="@+id/daftar_email"
@@ -46,7 +65,7 @@
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
             android:background="#ffffff"
-            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:gravity="center"
             android:hint="Email"
             android:textColorHint="#808080"
@@ -61,11 +80,29 @@
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
             android:background="#ffffff"
-            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:gravity="center"
             android:hint="Kata Sandi"
             android:textColorHint="#808080"
             android:textColor="#000000"
+            android:inputType="textPassword"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="216dp" />
+
+        <EditText
+            android:id="@+id/daftar_confirmpassword"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:gravity="center"
+            android:hint="Konfirmasi Kata Sandi"
+            android:textColorHint="#808080"
+            android:textColor="#000000"
+            android:inputType="textPassword"
             android:textSize="16dp"
             tools:layout_editor_absoluteX="155dp"
             tools:layout_editor_absoluteY="216dp" />
@@ -74,8 +111,8 @@
             android:id="@+id/daftar_btn"
             android:layout_width="120dp"
             android:layout_height="58dp"
-            android:adjustViewBounds="true"
             android:layout_marginTop="20dp"
+
 
             android:scaleType="fitCenter"
             android:src="@drawable/daftar" />
