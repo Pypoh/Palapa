@@ -115,7 +115,7 @@
 
 
             android:scaleType="fitCenter"
-            android:src="@drawable/daftar" />
+            android:src="@drawable/ic_perm_identity_black_24dp" />
 
 
 
