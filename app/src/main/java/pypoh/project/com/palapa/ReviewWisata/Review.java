@@ -1,23 +1,33 @@
-package pypoh.project.com.palapa.ProfilePage;
+package pypoh.project.com.palapa.ReviewWisata;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
-import pypoh.project.com.palapa.Main.MainActivity;
+import android.widget.TextView;
+
 import pypoh.project.com.palapa.Main2.Main2Activity;
+import pypoh.project.com.palapa.ProfilePage.Tab1Kiriman;
+import pypoh.project.com.palapa.ProfilePage.Tab2Mengikuti;
+import pypoh.project.com.palapa.ProfilePage.Tab3Pengikut;
 import pypoh.project.com.palapa.R;
 import pypoh.project.com.palapa.Util.SectionsPageAdapter;
 
-public class Profile extends AppCompatActivity {
-
-
-    private static final String TAG = "MainActivity";
+public class Review extends AppCompatActivity {
 
     private SectionsPageAdapter mSectionsPageAdapter;
 
@@ -26,7 +36,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_review);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,12 +68,11 @@ public class Profile extends AppCompatActivity {
     }
 
 
-
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new Tab1Kiriman(), "Kiriman");
         adapter.addFragment(new Tab2Mengikuti(), "Mengikuti");
-        adapter.addFragment(new Tab3Pengikut(), "Pengikut");
         viewPager.setAdapter(adapter);
     }
 }
+

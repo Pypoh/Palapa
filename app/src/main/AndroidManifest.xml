@@ -40,7 +40,14 @@
             android:name=".ProfilePage.Profile"
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".KatalogPage.Katalog" />
+        <activity
+            android:name=".KatalogPage.Katalog"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Post.KirimanBaru" />
+        <activity
+            android:name=".ReviewWisata.Review"
+            android:label="@string/title_activity_review"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
