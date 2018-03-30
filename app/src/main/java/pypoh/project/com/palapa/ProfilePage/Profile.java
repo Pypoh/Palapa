@@ -1,12 +1,16 @@
-package pypoh.project.com.palapa;
+package pypoh.project.com.palapa.ProfilePage;
 
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
+
+import pypoh.project.com.palapa.R;
+import pypoh.project.com.palapa.Util.SectionsPageAdapter;
+
+public class Profile extends AppCompatActivity {
+
 
     private static final String TAG = "MainActivity";
 
@@ -17,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
@@ -29,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Timeline(), "Timeline");
-        adapter.addFragment(new Tab2Search(), "Search");
-        adapter.addFragment(new Tab3Notification(), "Notif");
-        adapter.addFragment(new Tab4Chat(), "Chat");
+        adapter.addFragment(new Tab1Kiriman(), "Kiriman");
+        adapter.addFragment(new Tab2Mengikuti(), "Mengikuti");
+        adapter.addFragment(new Tab3Pengikut(), "Pengikut");
         viewPager.setAdapter(adapter);
     }
 }

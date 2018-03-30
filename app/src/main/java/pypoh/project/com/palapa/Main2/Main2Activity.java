@@ -1,12 +1,10 @@
-package pypoh.project.com.palapa;
+package pypoh.project.com.palapa.Main2;
 
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import pypoh.project.com.palapa.KatalogPage.Katalog;
+import pypoh.project.com.palapa.KoinPage.Koin;
+import pypoh.project.com.palapa.Main2.Tab1Timeline;
+import pypoh.project.com.palapa.Main2.Tab2Search;
+import pypoh.project.com.palapa.Main2.Tab3Notification;
+import pypoh.project.com.palapa.Main2.Tab4Chat;
+import pypoh.project.com.palapa.ProfilePage.Profile;
+import pypoh.project.com.palapa.R;
+import pypoh.project.com.palapa.Util.SectionsPageAdapter;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,6 +53,11 @@ public class Main2Activity extends AppCompatActivity
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_18dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_home_black_18dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_home_black_18dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_home_black_18dp);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -96,17 +107,17 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        if (id == R.id.profile) {
+            Intent toProfile = new Intent(Main2Activity.this, Profile.class);
+            startActivity(toProfile);
+        } else if (id == R.id.katalog) {
+            Intent toKatalog = new Intent(Main2Activity.this, Katalog.class);
+            startActivity(toKatalog);
+        } else if (id == R.id.koinsaya) {
+            Intent toKoinSaya = new Intent(Main2Activity.this, Koin.class);
+            startActivity(toKoinSaya);
+        } else if (id == R.id.logout_navbar) {
 
         }
 

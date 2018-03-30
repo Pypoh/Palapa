@@ -1,13 +1,15 @@
-package pypoh.project.com.palapa;
+package pypoh.project.com.palapa.KatalogPage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeScreen extends AppCompatActivity {
+import pypoh.project.com.palapa.R;
+
+public class Katalog extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.activity_katalog);
     }
 }

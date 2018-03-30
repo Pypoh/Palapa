@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pypoh.project.com.palapa.RegisterPage"
+    tools:context="pypoh.project.com.palapa.Auth.RegisterPage"
     android:background="@drawable/signup_background"
     >
 

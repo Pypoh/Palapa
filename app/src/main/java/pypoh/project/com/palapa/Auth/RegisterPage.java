@@ -1,4 +1,4 @@
-package pypoh.project.com.palapa;
+package pypoh.project.com.palapa.Auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import pypoh.project.com.palapa.R;
 
 public class RegisterPage extends AppCompatActivity {
 
