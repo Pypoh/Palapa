@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pypoh.project.com.palapa.KatalogPage.Katalog">
+    tools:context="pypoh.project.com.palapa.KatalogPage.Katalog"
+    android:background="#B5CFCE">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

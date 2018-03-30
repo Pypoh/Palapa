@@ -9,17 +9,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import pypoh.project.com.palapa.Main.MainActivity;
 import pypoh.project.com.palapa.Main2.Main2Activity;
 import pypoh.project.com.palapa.R;
 import pypoh.project.com.palapa.Util.SectionsPageAdapter;
+import pypoh.project.com.palapa.Util.SectionsPageAdapter11;
 
 public class Profile extends AppCompatActivity {
 
 
     private static final String TAG = "MainActivity";
 
-    private SectionsPageAdapter mSectionsPageAdapter;
+    private SectionsPageAdapter11 mSectionsPageAdapter;
 
     private ViewPager mViewPager;
 
@@ -31,17 +31,17 @@ public class Profile extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setNavigationIcon(R.drawable.ic_home_black_18dp);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Main2Activity.class));
+                finish();
             }
         });
 
 
-        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+        mSectionsPageAdapter = new SectionsPageAdapter11(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(mViewPager);

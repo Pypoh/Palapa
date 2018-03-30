@@ -10,13 +10,13 @@ import pypoh.project.com.palapa.Main2.Tab2Search;
 import pypoh.project.com.palapa.Main2.Tab3Notification;
 import pypoh.project.com.palapa.Main2.Tab4Chat;
 import pypoh.project.com.palapa.R;
-import pypoh.project.com.palapa.Util.SectionsPageAdapter;
+import pypoh.project.com.palapa.Util.SectionsPageAdapter11;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private SectionsPageAdapter mSectionsPageAdapter;
+    private SectionsPageAdapter11 mSectionsPageAdapter;
 
     private ViewPager mViewPager;
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+        mSectionsPageAdapter = new SectionsPageAdapter11(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(mViewPager);
@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Timeline(), "Timeline");
-        adapter.addFragment(new Tab2Search(), "Search");
-        adapter.addFragment(new Tab3Notification(), "Notif");
-        adapter.addFragment(new Tab4Chat(), "Chat");
+        SectionsPageAdapter11 adapter = new SectionsPageAdapter11(getSupportFragmentManager());
+        adapter.addFragment(new Tab1Timeline());
+        adapter.addFragment(new Tab2Search());
+        adapter.addFragment(new Tab3Notification());
+        adapter.addFragment(new Tab4Chat());
         viewPager.setAdapter(adapter);
     }
 }

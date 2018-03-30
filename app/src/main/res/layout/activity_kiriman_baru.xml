@@ -4,37 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pypoh.project.com.palapa.Post.KirimanBaru">
+    tools:context="pypoh.project.com.palapa.Post.KirimanBaru"
+    android:background="#B5CFCE">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-        
-        
+        android:orientation="vertical">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:orientation="vertical"
+            android:background="#EFEFEF"
             >
+
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/logo_transparent"
-                />
+                android:layout_height="80dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/foto_review_wisata" />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Review Wisata"
+                android:textSize="24dp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Fokus mengulas tempat wisata secara detail dan lengkap untuk setiap satu tempat wisata yang dikunjungi."
                 android:gravity="center"/>
 
             <Button
+                android:id="@+id/btn_newReview"
                 android:layout_width="125dp"
-                android:layout_height="100dp" />
+                android:layout_height="50dp"
+                android:text="Buat"
+                android:textSize="16dp"/>
 
         </LinearLayout>
 
@@ -43,28 +86,49 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:padding="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:orientation="vertical"
+            android:background="#EFEFEF"
             >
             <ImageView
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/logo_transparent"
+                android:layout_height="80dp"
+                android:src="@drawable/foto_catatan_perjalanan"
                 />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
                 android:text="Catatan Perjalanan"
                 android:gravity="center"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Berisi catatan perjalanan wisata secara lengkap dan menginspirasi yang dilakukan minimal dalam 2 hari."
+                android:gravity="center"/>
+
             <Button
+                android:id="@+id/btn_newCatatan"
                 android:layout_width="125dp"
-                android:layout_height="100dp" />
+                android:layout_height="50dp"
+                android:text="Buat"
+                android:textSize="16dp"/>
 
         </LinearLayout>
-        
-        
-        
+
+
+
     </LinearLayout>
+
+</LinearLayout>
+
+
     
 </RelativeLayout>

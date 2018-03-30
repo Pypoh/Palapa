@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import pypoh.project.com.palapa.Main.MainActivity;
+import pypoh.project.com.palapa.Main2.Main2Activity;
 import pypoh.project.com.palapa.R;
 
 public class LoginPage extends AppCompatActivity {
@@ -24,8 +25,8 @@ public class LoginPage extends AppCompatActivity {
     private EditText mEditTextPassword;
     FirebaseUser user;
     FirebaseAuth mAuth;
-    private ImageButton mBtnLogin;
-    private ImageButton mBtnRegister;
+    private Button mBtnLogin;
+    private Button mBtnRegister;
 
 
     @Override
@@ -36,8 +37,8 @@ public class LoginPage extends AppCompatActivity {
         mEditTextEmail = (EditText) findViewById(R.id.login_username);
         mEditTextPassword = (EditText) findViewById(R.id.login_password);
 
-        mBtnLogin = (ImageButton) findViewById(R.id.masuk_btn);
-        mBtnRegister = (ImageButton) findViewById(R.id.daftar_btn);
+        mBtnLogin = (Button) findViewById(R.id.masuk_btn);
+        mBtnRegister = (Button) findViewById(R.id.daftar_btn);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -66,7 +67,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private void navigateToMainPage() {
-        Intent intent = new Intent(LoginPage.this, MainActivity.class);
+        Intent intent = new Intent(LoginPage.this, Main2Activity.class);
         startActivity(intent);
     }
 

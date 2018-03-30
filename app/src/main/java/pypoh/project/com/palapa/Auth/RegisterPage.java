@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -22,11 +23,12 @@ import pypoh.project.com.palapa.R;
 public class RegisterPage extends AppCompatActivity {
 
     private EditText mEditTextUsername;
+    private EditText mEditTextName;
     private EditText mEditTextEmail;
     private EditText mEditTextPassword;
     private EditText mEditTextConfirmPassword;
     private FirebaseAuth mAuth;
-    private ImageButton mBtnSignUp;
+    private Button mBtnSignUp;
 
 
 
@@ -38,9 +40,11 @@ public class RegisterPage extends AppCompatActivity {
 
         mEditTextEmail = (EditText) findViewById(R.id.daftar_email);
         mEditTextUsername = (EditText) findViewById(R.id.daftar_username);
+        mEditTextName = (EditText) findViewById(R.id.daftar_nama);
         mEditTextPassword = (EditText) findViewById(R.id.daftar_password);
         mEditTextConfirmPassword = (EditText) findViewById(R.id.daftar_confirmpassword);
-        mBtnSignUp = (ImageButton) findViewById(R.id.daftar_btn);
+        mBtnSignUp = (Button) findViewById(R.id.daftar_btn);
+
 
         mBtnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +70,7 @@ public class RegisterPage extends AppCompatActivity {
         String email = mEditTextEmail.getText().toString();
         String password = mEditTextPassword.getText().toString();
         String con_pass = mEditTextConfirmPassword.getText().toString();
+        String nama = mEditTextName.getText().toString();
 
 
         if (email.equals("")) {
@@ -84,12 +89,14 @@ public class RegisterPage extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         String userID = mEditTextUsername.getText().toString();
+                        String name = mEditTextName.getText().toString();
                         DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
 
                         DatabaseReference ref1 = mRootRef.child("users").child(userID);
 
                         ref1.child("Email").setValue(user.getEmail());
                         ref1.child("Username").setValue(userID);
+                        ref1.child("Name").setValue(name);
                         Toast.makeText(RegisterPage.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
 
                         navigateToLogin();

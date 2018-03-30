@@ -1,6 +1,5 @@
 package pypoh.project.com.palapa.Main2;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,19 +16,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import pypoh.project.com.palapa.KatalogPage.Katalog;
 import pypoh.project.com.palapa.KoinPage.Koin;
-import pypoh.project.com.palapa.Main2.Tab1Timeline;
-import pypoh.project.com.palapa.Main2.Tab2Search;
-import pypoh.project.com.palapa.Main2.Tab3Notification;
-import pypoh.project.com.palapa.Main2.Tab4Chat;
+import pypoh.project.com.palapa.Post.KirimanBaru;
 import pypoh.project.com.palapa.ProfilePage.Profile;
 import pypoh.project.com.palapa.R;
 import pypoh.project.com.palapa.Util.SectionsPageAdapter;
+import pypoh.project.com.palapa.Util.SectionsPageAdapter11;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private SectionsPageAdapter mSectionsPageAdapter;
+    private SectionsPageAdapter11 mSectionsPageAdapter;
 
     private ViewPager mViewPager;
 
@@ -50,7 +49,7 @@ public class Main2Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+        mSectionsPageAdapter = new SectionsPageAdapter11(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(mViewPager);
@@ -58,29 +57,29 @@ public class Main2Activity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_18dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_home_black_18dp);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_home_black_18dp);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_home_black_18dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_black_18dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_notifications_black_18dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_email_black_24dp);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent newPost = new Intent(Main2Activity.this, KirimanBaru.class);
+                startActivity(newPost);
             }
         });
-
     }
 
 
 
     private void setupViewPager(ViewPager viewPager) {
-        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Timeline(), "Timeline");
-        adapter.addFragment(new Tab2Search(), "Search");
-        adapter.addFragment(new Tab3Notification(), "Notif");
-        adapter.addFragment(new Tab4Chat(), "Chat");
+        SectionsPageAdapter11 adapter = new SectionsPageAdapter11(getSupportFragmentManager());
+        adapter.addFragment(new Tab1Timeline());
+        adapter.addFragment(new Tab2Search());
+        adapter.addFragment(new Tab3Notification());
+        adapter.addFragment(new Tab4Chat());
         viewPager.setAdapter(adapter);
     }
 
@@ -133,7 +132,8 @@ public class Main2Activity extends AppCompatActivity
             Intent toKoinSaya = new Intent(Main2Activity.this, Koin.class);
             startActivity(toKoinSaya);
         } else if (id == R.id.logout_navbar) {
-
+            FirebaseAuth.getInstance().signOut();
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
