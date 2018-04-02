@@ -17,6 +17,7 @@
         android:gravity="center"
         >
 
+
         <!-- TODO: Change color of logo -->
         <ImageView
             android:id="@+id/logo"
@@ -24,44 +25,70 @@
             android:layout_height="225dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="0dp"
-            android:src="@drawable/logo_white"
+            android:src="@drawable/logo_black"
 
 
             />
 
-        <EditText
-            android:id="@+id/login_username"
+        <LinearLayout
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
             android:background="#ffffff"
-            android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
-            android:gravity="center"
-            android:hint="Nama Pengguna"
-            android:textColorHint="#808080"
-            android:textColor="#000000"
-            android:textSize="16dp"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="216dp" />
+            >
 
-        <EditText
-            android:id="@+id/login_password"
-            android:layout_below="@id/login_username"
+            <ImageView
+                android:layout_width="40dp"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_perm_identity_black_24dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_username"
+                android:hint="Nama Pengguna"
+                android:singleLine="true"
+                android:fontFamily="@font/tw_cent_mt"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:backgroundTint="#ffffff"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:background="#ffffff"
-            android:gravity="center"
-            android:hint="Kata Sandi"
-            android:textColorHint="#808080"
-            android:textColor="#000000"
-            android:inputType="textPassword"
-            android:textSize="16dp"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="216dp" />
+            android:layout_marginTop="15dp"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_lock_outline_black_24dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_password"
+                android:hint="Kata Sandi"
+                android:fontFamily="@font/tw_cent_mt"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:backgroundTint="#ffffff"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                />
+
+        </LinearLayout>
+
+
+
+
+
 
         <TextView
             android:layout_width="280dp"
@@ -71,6 +98,9 @@
             android:text="Lupa Kata Sandi?"
             android:layout_marginTop="10dp"
             android:textColor="#ffffff"
+            android:fontFamily="@font/tw_cent_mt"
+            android:textSize="16dp"
+
 
             />
 
@@ -78,9 +108,12 @@
             android:id="@+id/masuk_btn"
             android:layout_width="140dp"
             android:layout_height="58dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:text="Masuk"
-            android:textSize="18dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/tw_cent_mt"
+            android:background="#393633"
+            android:textColor="#ffffff"
             />
 
         <TextView
@@ -88,21 +121,29 @@
             android:layout_height="wrap_content"
             android:text="atau"
             android:textColor="#ffffff"
+            android:fontFamily="@font/tw_cent_mt"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"
             />
 
         <Button
             android:id="@+id/daftar_btn"
             android:layout_width="140dp"
             android:layout_height="58dp"
+            android:layout_marginTop="5dp"
             android:text="Daftar"
-            android:textSize="18dp"
-
-             />
+            android:textSize="20dp"
+            android:fontFamily="@font/tw_cent_mt"
+            android:background="#34717D"
+            android:textColor="#ffffff"
+            />
 
 
 
 
 
     </LinearLayout>
+
+
 
 </RelativeLayout>

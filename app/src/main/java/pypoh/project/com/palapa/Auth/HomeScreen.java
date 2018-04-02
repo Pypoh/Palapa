@@ -2,6 +2,7 @@ package pypoh.project.com.palapa.Auth;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,9 @@ public class HomeScreen extends AppCompatActivity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                startActivity(new Intent(HomeScreen.this,LoginPage.class));
+                Intent toLogin = new Intent(HomeScreen.this, LoginPage.class);
+                toLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(toLogin);
             }
         }, 2000);
     }

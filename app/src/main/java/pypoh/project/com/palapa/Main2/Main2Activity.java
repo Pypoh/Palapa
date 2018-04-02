@@ -18,6 +18,7 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import pypoh.project.com.palapa.Auth.LoginPage;
 import pypoh.project.com.palapa.KatalogPage.Katalog;
 import pypoh.project.com.palapa.KoinPage.Koin;
 import pypoh.project.com.palapa.Post.KirimanBaru;
@@ -40,6 +41,8 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        toolbar.setTitle("Beranda");
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -60,6 +63,11 @@ public class Main2Activity extends AppCompatActivity
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_black_18dp);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_notifications_black_18dp);
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_email_black_24dp);
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab  = tabLayout.getTabAt(i);
+            if (tab != null) tab.setCustomView(R.layout.icon_tab);
+        }
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -121,7 +129,6 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-
         if (id == R.id.profile) {
             Intent toProfile = new Intent(Main2Activity.this, Profile.class);
             startActivity(toProfile);
@@ -133,7 +140,9 @@ public class Main2Activity extends AppCompatActivity
             startActivity(toKoinSaya);
         } else if (id == R.id.logout_navbar) {
             FirebaseAuth.getInstance().signOut();
-            finish();
+            Intent toLogin = new Intent(Main2Activity.this, LoginPage.class);
+            toLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(toLogin);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

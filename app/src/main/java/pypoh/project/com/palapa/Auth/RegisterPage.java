@@ -87,16 +87,18 @@ public class RegisterPage extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        String userID = mEditTextUsername.getText().toString();
+                        //FirebaseUser user = mAuth.getCurrentUser();
+                        String userID = mAuth.getCurrentUser().getUid();
                         String name = mEditTextName.getText().toString();
+                        String email = mAuth.getCurrentUser().getEmail();
+                        String username = mEditTextUsername.getText().toString();
                         DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
 
                         DatabaseReference ref1 = mRootRef.child("users").child(userID);
 
-                        ref1.child("Email").setValue(user.getEmail());
-                        ref1.child("Username").setValue(userID);
-                        ref1.child("Name").setValue(name);
+                        ref1.child("email").setValue(email);
+                        ref1.child("username").setValue(username);
+                        ref1.child("nama").setValue(name);
                         Toast.makeText(RegisterPage.this, "Berhasil Mendaftar", Toast.LENGTH_SHORT).show();
 
                         navigateToLogin();
